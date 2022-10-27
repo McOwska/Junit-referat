@@ -23,27 +23,33 @@ class CalculatorTest {
 
     private Calculator calculator;
 
+    /*
     @BeforeEach
     void setUp() {
         Calculator calculator = new Calculator();
     }
 
+     */
+
     @Test
     void testDivideTrue() {
-
+        Calculator calculator = new Calculator();
         double result = calculator.divide(4, 2);
         assertEquals(2, result);
     }
 
     @Test
     void testDivideFalse() {
+        Calculator calculator = new Calculator();
         double result = calculator.divide(4, 2);
         assertNotEquals(3, result);
     }
 
     @Test
     void testDivideByZero() {
+        Calculator calculator = new Calculator();
         assertThrows(ArithmeticException.class, () -> calculator.divide(4, 0));
     }
+
 
 }
