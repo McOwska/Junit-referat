@@ -1,14 +1,35 @@
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
 
+    // private Calculator calculator;
+
+    @BeforeAll
+    static void setUpAllTests() {
+        System.out.println("Starting all tests");
+    }
+
+    @BeforeEach
+    void setUpTest() {
+        System.out.println("Starting test");
+    }
+
+    @AfterEach
+    void cleanAfterTest() {
+        System.out.println("Test finished");
+    }
+
+    @AfterAll
+    static void cleanAfterAllTests() {
+        System.out.println("All tests finished");
+    }
+
 
     @Test
     void testAddTrue() {
-        Calculator calculator1 = new Calculator();
+        Calculator calculator = new Calculator();
         // given
         double a = 2;
         double b = 3;
@@ -17,19 +38,8 @@ class CalculatorTest {
         double result = 5;
 
         // then
-        assertEquals(result, calculator1.add(a, b));
+        assertEquals(result, calculator.add(a, b));
     }
-
-
-    private Calculator calculator;
-
-    /*
-    @BeforeEach
-    void setUp() {
-        Calculator calculator = new Calculator();
-    }
-
-     */
 
     @Test
     void testDivideTrue() {
