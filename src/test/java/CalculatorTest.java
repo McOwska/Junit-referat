@@ -1,9 +1,7 @@
 import org.junit.jupiter.api.*;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
-
     @BeforeAll
     static void setUpAllTests() {
         System.out.println("Starting all tests");
@@ -61,7 +59,7 @@ class CalculatorTest {
         double b = 4.0;
 
         // when
-        double result = 300;
+        double result = 300.0;
 
         // then
         assertFalse(result < calculator.multiply(a, b));
@@ -96,6 +94,39 @@ class CalculatorTest {
         Calculator calculator = new Calculator();
 
         assertThrows(ArithmeticException.class, () -> calculator.divide(4.0, 0.0));
+    }
+
+    @Test
+    void testMisc() {
+        Calculator calculator = new Calculator();
+        Calculator calculator2 = new Calculator();
+
+        assertNotSame(calculator, calculator2);
+    }
+
+    @Test
+    void testMisc2() {
+        Calculator calculator = new Calculator();
+
+        assertNotNull(calculator);
+    }
+
+    @Test
+    void testMisc3() {
+        Calculator calculator = new Calculator();
+
+        assertInstanceOf(Calculator.class, calculator);
+    }
+
+    @Test
+    void testMisc4() {
+        Calculator calculator = new Calculator();
+
+        assertAll(
+                () -> assertEquals(0.1 + 0.2, calculator.add(0.1, 0.2)),
+                () -> assertEquals(2.0 * 3.0, calculator.multiply(2.0, 3.0)),
+                () -> assertEquals(4.0 / 2.0, calculator.divide(4.0, 2.0))
+        );
     }
 
 }
