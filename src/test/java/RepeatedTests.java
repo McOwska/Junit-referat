@@ -2,7 +2,7 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RepeatedTests {
-    @DisplayName("Reapeated multiplication test")
+    @DisplayName("Repeated multiplication test")
     @RepeatedTest(value = 5, name = "{displayName} {currentRepetition}/{totalRepetitions}")
     void repeatedTest() {
         Calculator calculator = new Calculator();
@@ -14,7 +14,7 @@ public class RepeatedTests {
         assertEquals(result, calculator.multiply(a, b));
     }
 
-    @DisplayName("Reapeated multiplication test 2")
+    @DisplayName("Repeated multiplication test 2")
     @RepeatedTest(5)
     void repeatedTest2(TestInfo testInfo, RepetitionInfo repetitionInfo) {
         System.out.println("Current repetitions:" + repetitionInfo.getCurrentRepetition());
