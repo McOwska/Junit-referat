@@ -2,6 +2,7 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
+    private Calculator calculator;
     @BeforeAll
     static void setUpAllTests() {
         System.out.println("Starting all tests");
@@ -10,6 +11,7 @@ class CalculatorTest {
     @BeforeEach
     void setUpTest() {
         System.out.println("Starting test");
+        calculator = new Calculator();
     }
 
     @AfterEach
@@ -25,7 +27,6 @@ class CalculatorTest {
 
     @Test
     void testAddTrue() {
-        Calculator calculator = new Calculator();
         // given
         double a = 0.1;
         double b = 0.2;
@@ -39,7 +40,6 @@ class CalculatorTest {
 
     @Test
     void testMultiplyTrue() {
-       Calculator calculator = new Calculator();
         // given
         double a = 2.0;
         double b = 3.0;
@@ -53,7 +53,6 @@ class CalculatorTest {
 
     @Test
     void testMultiplyFalse() {
-        Calculator calculator = new Calculator();
         // given
         double a = 4.0;
         double b = 4.0;
@@ -67,8 +66,6 @@ class CalculatorTest {
 
     @Test
     void testDivideTrue() {
-        Calculator calculator = new Calculator();
-
         double a = 4.0;
         double b = 2.0;
 
@@ -79,7 +76,6 @@ class CalculatorTest {
 
     @Test
     void testDivideFalse() {
-        Calculator calculator = new Calculator();
 
         double a = 4.0;
         double b = 2.0;
@@ -91,14 +87,11 @@ class CalculatorTest {
 
     @Test
     void testDivideByZero() {
-        Calculator calculator = new Calculator();
-
         assertThrows(ArithmeticException.class, () -> calculator.divide(4.0, 0.0));
     }
 
     @Test
     void testMisc() {
-        Calculator calculator = new Calculator();
         Calculator calculator2 = new Calculator();
 
         assertNotSame(calculator, calculator2);
@@ -106,22 +99,17 @@ class CalculatorTest {
 
     @Test
     void testMisc2() {
-        Calculator calculator = new Calculator();
 
         assertNotNull(calculator);
     }
 
     @Test
     void testMisc3() {
-        Calculator calculator = new Calculator();
-
         assertInstanceOf(Calculator.class, calculator);
     }
 
     @Test
     void testMisc4() {
-        Calculator calculator = new Calculator();
-
         assertAll(
                 () -> assertEquals(0.1 + 0.2, calculator.add(0.1, 0.2)),
                 () -> assertEquals(2.0 * 3.0, calculator.multiply(2.0, 3.0)),
