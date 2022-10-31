@@ -102,12 +102,15 @@ class CalculatorTest {
         Calculator calculator2 = new Calculator();
 
         assertNotSame(calculator, calculator2);
+        assertSame(calculator, calculator);
     }
 
     @Test
     void testMisc2() {
-        Calculator calculator = new Calculator();
+        Calculator calculator = null;
+        assertNull(calculator);
 
+        calculator = new Calculator();
         assertNotNull(calculator);
     }
 

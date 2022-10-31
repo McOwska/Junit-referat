@@ -1,10 +1,4 @@
 public class Calculator {
-    private double result;
-
-    public void printResult(){
-        System.out.println(result);
-    }
-
     public double add (double a, double b){
         return a + b;
     }
