@@ -1,3 +1,5 @@
+package pl.edu.agh.kis.pz1.calc;
+
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 

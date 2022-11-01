@@ -1,3 +1,5 @@
+package pl.edu.agh.kis.pz1.calc;
+
 public class Calculator {
     public int add (int a, int b){
         return a + b;
