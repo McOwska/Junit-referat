@@ -6,10 +6,10 @@ public class RepeatedTests {
     @RepeatedTest(value = 5, name = "{displayName} {currentRepetition}/{totalRepetitions}")
     void repeatedTest() {
         Calculator calculator = new Calculator();
-        double a = 4.0;
-        double b = 10.0;
+        int a = 4;
+        int b = 10;
 
-        double result = a * b;
+        int result = 40;
 
         assertEquals(result, calculator.multiply(a, b));
     }
@@ -20,10 +20,10 @@ public class RepeatedTests {
         System.out.println("Current repetitions:" + repetitionInfo.getCurrentRepetition());
 
         Calculator calculator = new Calculator();
-        double a = 20.0;
-        double b = 30.0;
+        int a = 20;
+        int b = 30;
 
-        double result = a * b;
+        int result = 600;
 
         assertEquals(result, calculator.multiply(a, b));
     }

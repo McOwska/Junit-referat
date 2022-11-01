@@ -21,14 +21,14 @@ public class ParameterizedTests {
     }
 
     @ParameterizedTest
-    @ValueSource(doubles = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0})
-    void ParametrizedMultiplyMethodTest(double param){
+    @ValueSource(ints = {1, 2, 3, 4, 5, 6})
+    void ParametrizedMultiplyMethodTest(int param){
         assertEquals(param * param, calculator.multiply(param, param));
     }
 
     @ParameterizedTest
-    @CsvSource({"1.0, 2.0", "3.0, 4.0"})
-    void ParametrizedAddMethodTest(double param1, double param2){
+    @CsvSource({"1, 2", "3, 4", "5, 6"})
+    void ParametrizedAddMethodTest(int param1, int param2){
         assertEquals(param1 + param2, calculator.add(param1, param2));
     }
 

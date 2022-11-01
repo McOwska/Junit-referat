@@ -28,11 +28,11 @@ class CalculatorTest {
     @Test
     void testAddTrue() {
         // given
-        double a = 0.1;
-        double b = 0.2;
+        int a = 1;
+        int b = 2;
 
         // when
-        double result = a + b;
+        int result = 3;
 
         // then
         assertEquals(result, calculator.add(a, b));
@@ -41,11 +41,11 @@ class CalculatorTest {
     @Test
     void testMultiplyTrue() {
         // given
-        double a = 2.0;
-        double b = 3.0;
+        int a = 2;
+        int b = 3;
 
         // when
-        double result = 8.0;
+        int result = 8;
 
         // then
         assertTrue(result > calculator.multiply(a, b));
@@ -54,11 +54,11 @@ class CalculatorTest {
     @Test
     void testMultiplyFalse() {
         // given
-        double a = 4.0;
-        double b = 4.0;
+        int a = 4;
+        int b = 4;
 
         // when
-        double result = 300.0;
+        int result = 300;
 
         // then
         assertFalse(result < calculator.multiply(a, b));
@@ -66,10 +66,10 @@ class CalculatorTest {
 
     @Test
     void testDivideTrue() {
-        double a = 4.0;
-        double b = 2.0;
+        int a = 4;
+        int b = 2;
 
-        double result = a / b;
+        int result = a / b;
 
         assertEquals(result, calculator.divide(a, b));
     }
@@ -77,17 +77,17 @@ class CalculatorTest {
     @Test
     void testDivideFalse() {
 
-        double a = 4.0;
-        double b = 2.0;
+        int a = 4;
+        int b = 2;
 
-        double result = 10.0;
+        int result = 10;
 
         assertNotEquals(result, calculator.divide(a, b));
     }
 
     @Test
     void testDivideByZero() {
-        assertThrows(ArithmeticException.class, () -> calculator.divide(4.0, 0.0));
+        assertThrows(ArithmeticException.class, () -> calculator.divide(4, 0));
     }
 
     @Test
@@ -115,9 +115,9 @@ class CalculatorTest {
     @Test
     void testMisc4() {
         assertAll(
-                () -> assertEquals(0.1 + 0.2, calculator.add(0.1, 0.2)),
-                () -> assertEquals(2.0 * 3.0, calculator.multiply(2.0, 3.0)),
-                () -> assertEquals(4.0 / 2.0, calculator.divide(4.0, 2.0))
+                () -> assertEquals(3, calculator.add(1, 2)),
+                () -> assertEquals(6, calculator.multiply(2, 3)),
+                () -> assertEquals(2, calculator.divide(4, 2))
         );
     }
 
