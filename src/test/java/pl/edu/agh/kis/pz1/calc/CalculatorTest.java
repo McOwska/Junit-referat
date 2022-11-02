@@ -71,7 +71,7 @@ class CalculatorTest {
         int a = 4;
         int b = 2;
 
-        int result = a / b;
+        int result = 2;
 
         assertEquals(result, calculator.divide(a, b));
     }
@@ -102,7 +102,7 @@ class CalculatorTest {
 
     @Test
     void testMisc2() {
-        Calculator calculator = null;
+        calculator = null;
         assertNull(calculator);
 
         calculator = new Calculator();

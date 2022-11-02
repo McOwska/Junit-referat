@@ -25,6 +25,7 @@ public class ParameterizedTests {
     @ParameterizedTest
     @ValueSource(ints = {1, 2, 3, 4, 5, 6})
     void ParametrizedMultiplyMethodTest(int param){
+
         assertEquals(param * param, calculator.multiply(param, param));
     }
 
